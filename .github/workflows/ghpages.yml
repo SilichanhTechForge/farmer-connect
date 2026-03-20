@@ -22,15 +22,6 @@ jobs:
         with:
           dotnet-version: '8.0.x' # Use the relevant .NET version for WebSharper 10
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: '20'
-
-      - name: Install NPM Dependencies
-        run: npm ci || npm install
-        working-directory: ./AgriConnect
-
       - name: Build F# Project
         run: dotnet build -c Release
         working-directory: ./AgriConnect

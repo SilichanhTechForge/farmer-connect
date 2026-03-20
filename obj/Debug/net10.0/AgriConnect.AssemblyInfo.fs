@@ -10,7 +10,7 @@ open System.Reflection
 [<assembly: System.Reflection.AssemblyCompanyAttribute("AgriConnect")>]
 [<assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")>]
 [<assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")>]
-[<assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")>]
+[<assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3271c6ed680d4a379e7440efea8e3fa84849c8a2")>]
 [<assembly: System.Reflection.AssemblyProductAttribute("AgriConnect")>]
 [<assembly: System.Reflection.AssemblyTitleAttribute("AgriConnect")>]
 [<assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")>]

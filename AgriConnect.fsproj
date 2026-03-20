@@ -7,9 +7,6 @@
   <ItemGroup>
     <Compile Include="Client.fs" />
     <Compile Include="Startup.fs" />
-    <None Include="package.json" />
-    <None Include="esbuild.config.mjs" />
-    <None Include="vite.config.js" />
     <None Include="wsconfig.json" />
   </ItemGroup>
 
@@ -19,10 +16,5 @@
     <PackageReference Include="WebSharper.UI" Version="10.0.0.652" />
     <PackageReference Include="WebSharper.AspNetCore" Version="10.0.0.652" />
   </ItemGroup>
-
-  <Target Name="ESBuildBundle" AfterTargets="WebSharperCompile" Condition=" '$(Configuration)' == 'Release' ">
-    <Exec Command="npm install" />
-    <Exec Command="node ./esbuild.config.mjs" />
-  </Target>
 
 </Project>

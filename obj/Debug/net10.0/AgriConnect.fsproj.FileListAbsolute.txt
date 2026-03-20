@@ -75,3 +75,5 @@ C:\Users\Advice\Desktop\6th Semester\FSharp\Agri-connect\AgriConnect\obj\Debug\n
 C:\Users\Advice\Desktop\6th Semester\FSharp\Agri-connect\AgriConnect\obj\Debug\net10.0\compressed\hislshv3vr-{0}-c8v414gyca-c8v414gyca.gz
 C:\Users\Advice\Desktop\6th Semester\FSharp\Agri-connect\AgriConnect\obj\Debug\net10.0\compressed\su96pbcbkq-{0}-u441rwmv6b-u441rwmv6b.gz
 C:\Users\Advice\Desktop\6th Semester\FSharp\Agri-connect\AgriConnect\obj\Debug\net10.0\compressed\5l48olmisp-{0}-4odrh4ewiq-4odrh4ewiq.gz
+C:\Users\Advice\Desktop\6th Semester\FSharp\Agri-connect\AgriConnect\obj\Debug\net10.0\AgriConnect.sourcelink.json
+C:\Users\Advice\Desktop\6th Semester\FSharp\Agri-connect\AgriConnect\obj\Debug\net10.0\compressed\b25urs15e6-{0}-hbelho2b7s-hbelho2b7s.gz
