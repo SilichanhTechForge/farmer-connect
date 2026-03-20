@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>AgriConnect</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/main.css" />
+    <style>
+        [ws-template], [ws-children-template] { display: none; }
+    </style>
+    <script type="text/javascript" src="Scripts/AgriConnect.head.js"></script>
+</head>
+<body>
+    <div id="main" ws-children-template="Main">
+        <nav class="navbar">
+            <div class="nav-brand" ws-onclick="GoHome">🌱 AgriConnect</div>
+            <div class="nav-links">
+                <a class="nav-link ${HomeActive}" ws-onclick="GoHome">${NavHome}</a>
+                <a class="nav-link ${MarketActive}" ws-onclick="GoMarket">${NavMarket}</a>
+                <a class="nav-link ${DashboardActive}" ws-onclick="GoDashboard">${NavDashboard}</a>
+                <a class="nav-link ${PaymentsActive}" ws-onclick="GoPayments">${NavPayments}</a>
+                <button class="lang-toggle" ws-onclick="ToggleLang">${CurrentLangIcon}</button>
+            </div>
+        </nav>
+
+        <div class="container" ws-replace="CurrentView"></div>
+
+        <!-- ================= TEMPLATES ================= -->
+
+        <!-- Home Template -->
+        <div ws-template="HomeView" class="animate-in">
+            <div class="hero">
+                <h1>${HeroTitle}</h1>
+                <p>${HeroSubtitle}</p>
+                <button class="btn btn-primary" ws-onclick="GoMarket">${HeroCTA}</button>
+            </div>
+            <div class="grid">
+                <div class="card">
+                    <div class="card-title">👨‍🌾 ${Feature1Title}</div>
+                    <p>${Feature1Desc}</p>
+                </div>
+                <div class="card">
+                    <div class="card-title">🛒 ${Feature2Title}</div>
+                    <p>${Feature2Desc}</p>
+                </div>
+                <div class="card">
+                    <div class="card-title">💳 ${Feature3Title}</div>
+                    <p>${Feature3Desc}</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Market Template -->
+        <div ws-template="MarketView" class="animate-in">
+            <h2>${MarketTitle}</h2>
+            <p style="margin-bottom: 2rem;">${MarketSubtitle}</p>
+            <div class="grid" style="margin-bottom: 2rem;">
+                <input class="form-control" ws-var="SearchQuery" placeholder="${SearchPlaceholder}" />
+                <select class="form-control" ws-var="SelectedCategory">
+                    <option value="All">All Categories</option>
+                    <option value="Vegetables">Vegetables</option>
+                    <option value="Fruits">Fruits</option>
+                    <option value="Grains">Grains</option>
+                    <option value="Livestock">Livestock</option>
+                </select>
+            </div>
+            <div class="grid" ws-hole="ProductCards">
+                <!-- Products go here -->
+            </div>
+            <div ws-replace="EmptyState"></div>
+        </div>
+
+        <!-- Single Product Card Template -->
+        <div ws-template="ProductCard">
+            <div class="card">
+                <span class="card-badge">${Category}</span>
+                <div class="card-title">${ProductName}</div>
+                <p><strong>Seller:</strong> ${FarmerName}</p>
+                <p style="color: #6c757d; font-size: 0.9rem; margin-top: 0.5rem;">${Description}</p>
+                <div class="card-price">${Price}</div>
+                <button class="btn ${BtnClass}" ws-onclick="BuyProduct" ${BtnDisabled}>${BuyLabel}</button>
+            </div>
+        </div>
+
+        <!-- Dashboard Template -->
+        <div ws-template="DashboardView" class="animate-in">
+            <h2>${DashboardTitle}</h2>
+            
+            <!-- Statistics -->
+            <div class="grid" style="margin-bottom: 2rem;">
+                <div class="card">
+                    <div style="font-size: 0.9rem; color: #6c757d;">${TotalSalesLabel}</div>
+                    <div style="font-size: 1.5rem; font-weight: 700; color: var(--primary);">${TotalSalesVal}</div>
+                </div>
+                <div class="card">
+                    <div style="font-size: 0.9rem; color: #6c757d;">${TotalPendingLabel}</div>
+                    <div style="font-size: 1.5rem; font-weight: 700; color: var(--accent);">${TotalPendingVal}</div>
+                </div>
+                <div class="card">
+                    <div style="font-size: 0.9rem; color: #6c757d;">${TotalProductsLabel}</div>
+                    <div style="font-size: 1.5rem; font-weight: 700;">${TotalProductsVal}</div>
+                </div>
+            </div>
+
+            <div class="card" style="margin-bottom: 2rem;">
+                <h3 style="margin-bottom: 1rem;">${AddProductTitle}</h3>
+                <div class="form-group">
+                    <label class="form-label">${LblName}</label>
+                    <input class="form-control" ws-var="InputName" placeholder="${PhName}" />
+                </div>
+                <div class="form-group">
+                    <label class="form-label">${LblPrice}</label>
+                    <input class="form-control" ws-var="InputPrice" placeholder="${PhPrice}" />
+                </div>
+                <div class="form-group">
+                    <label class="form-label">${LblCategory}</label>
+                    <select class="form-control" ws-var="InputCategory">
+                        <option value="Vegetables">Vegetables</option>
+                        <option value="Fruits">Fruits</option>
+                        <option value="Grains">Grains</option>
+                        <option value="Livestock">Livestock</option>
+                    </select>
+                </div>
+                <button class="btn btn-primary" ws-onclick="AddProduct">${BtnAdd}</button>
+            </div>
+
+            <h3>${MyProductsTitle}</h3>
+            <div ws-hole="MyProductsList"></div>
+            <div ws-replace="EmptyState"></div>
+        </div>
+
+        <div ws-template="DashboardListItem">
+            <div class="list-item">
+                <div class="list-item-content">
+                    <strong>${ProductName}</strong> - <span style="color:var(--accent)">${Price}</span>
+                    <span style="display:inline-block; margin-left: 1rem; font-size: 0.8rem; background: #eee; padding: 2px 6px; border-radius: 4px;">${Status}</span>
+                </div>
+                <div class="list-item-actions">
+                    <button class="btn btn-danger" ws-onclick="RemoveProduct" style="padding: 0.4rem 0.8rem; font-size: 0.8rem;">${LblDelete}</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Payments Template -->
+        <div ws-template="PaymentsView" class="animate-in">
+            <h2>${PaymentsTitle}</h2>
+            <p style="margin-bottom: 1.5rem;">${PaymentsSubtitle}</p>
+
+            <div class="card" style="margin-bottom: 2rem;">
+                <h3 style="margin-bottom: 1rem;">${AddPaymentTitle}</h3>
+                <div class="grid">
+                    <div class="form-group">
+                        <label class="form-label">${LblBuyer}</label>
+                        <input class="form-control" ws-var="InputBuyer" />
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">${LblProductName}</label>
+                        <input class="form-control" ws-var="InputProdName" />
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">${LblAmount}</label>
+                        <input class="form-control" ws-var="InputAmount" />
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">${LblDueDate}</label>
+                        <input class="form-control" ws-var="InputDueDate" placeholder="yyyy-mm-dd" />
+                    </div>
+                </div>
+                <button class="btn btn-primary" ws-onclick="CreatePayment">${BtnAddPayment}</button>
+            </div>
+
+            <div ws-hole="PaymentsList"></div>
+            <div ws-replace="EmptyState"></div>
+        </div>
+
+        <div ws-template="PaymentItem">
+            <div class="list-item ${DangerClass}">
+                <div class="list-item-content">
+                    <div style="font-weight: 700; margin-bottom: 0.25rem;">${BuyerName}</div>
+                    <div style="font-size: 0.9rem; color: #6c757d;">${ProductName} • Due: ${DueDate}</div>
+                    <div style="font-weight: 800; color: var(--primary); margin-top: 0.25rem;">${Amount}</div>
+                </div>
+                <div class="list-item-actions">
+                    <button class="btn btn-accent ${RemindDisabled}" ws-onclick="SendReminder" style="padding: 0.4rem 0.8rem; font-size: 0.8rem; background: #25D366; display: flex; align-items: center; gap: 0.5rem;">
+                        📱 ${LblRemind}
+                    </button>
+                    <button class="btn btn-primary ${PaidDisabled}" ws-onclick="MarkPaid" style="padding: 0.4rem 0.8rem; font-size: 0.8rem;">${LblMarkPaid}</button>
+                </div>
+            </div>
+        </div>
+
+        <div ws-template="EmptyStateView">
+            <div class="empty-state">${Message}</div>
+        </div>
+
+    </div>
+    <script type="module" src="Scripts/AgriConnect.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+{
+  "version": 2,
+  "dgSpecHash": "rQsRFUHI0Bw=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Advice\\Desktop\\6th Semester\\FSharp\\Agri-connect\\AgriConnect\\AgriConnect.fsproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Advice\\.nuget\\packages\\fsharp.core\\10.1.201\\fsharp.core.10.1.201.nupkg.sha512",
+    "C:\\Users\\Advice\\.nuget\\packages\\htmlagilitypack\\1.11.0\\htmlagilitypack.1.11.0.nupkg.sha512",
+    "C:\\Users\\Advice\\.nuget\\packages\\microsoft.win32.systemevents\\6.0.0\\microsoft.win32.systemevents.6.0.0.nupkg.sha512",
+    "C:\\Users\\Advice\\.nuget\\packages\\system.configuration.configurationmanager\\6.0.2\\system.configuration.configurationmanager.6.0.2.nupkg.sha512",
+    "C:\\Users\\Advice\\.nuget\\packages\\system.drawing.common\\6.0.0\\system.drawing.common.6.0.0.nupkg.sha512",
+    "C:\\Users\\Advice\\.nuget\\packages\\system.security.cryptography.protecteddata\\6.0.0\\system.security.cryptography.protecteddata.6.0.0.nupkg.sha512",
+    "C:\\Users\\Advice\\.nuget\\packages\\system.security.permissions\\6.0.1\\system.security.permissions.6.0.1.nupkg.sha512",
+    "C:\\Users\\Advice\\.nuget\\packages\\system.windows.extensions\\6.0.0\\system.windows.extensions.6.0.0.nupkg.sha512",
+    "C:\\Users\\Advice\\.nuget\\packages\\system.xml.xpath.xmldocument\\4.3.0\\system.xml.xpath.xmldocument.4.3.0.nupkg.sha512",
+    "C:\\Users\\Advice\\.nuget\\packages\\websharper\\10.0.0.652\\websharper.10.0.0.652.nupkg.sha512",
+    "C:\\Users\\Advice\\.nuget\\packages\\websharper.aspnetcore\\10.0.0.652\\websharper.aspnetcore.10.0.0.652.nupkg.sha512",
+    "C:\\Users\\Advice\\.nuget\\packages\\websharper.fsharp\\10.0.0.652\\websharper.fsharp.10.0.0.652.nupkg.sha512",
+    "C:\\Users\\Advice\\.nuget\\packages\\websharper.ui\\10.0.0.652\\websharper.ui.10.0.0.652.nupkg.sha512"
+  ],
+  "logs": []
+}

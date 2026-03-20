@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<linker>
+  <assembly fullname="AgriConnect">
+    <resource name="FSharpSignatureData.AgriConnect" action="remove"></resource>
+    <resource name="FSharpSignatureCompressedData.AgriConnect" action="remove"></resource>
+    <resource name="FSharpSignatureDataB.AgriConnect" action="remove"></resource>
+    <resource name="FSharpSignatureCompressedDataB.AgriConnect" action="remove"></resource>
+    <resource name="FSharpOptimizationData.AgriConnect" action="remove"></resource>
+    <resource name="FSharpOptimizationCompressedData.AgriConnect" action="remove"></resource>
+    <resource name="FSharpOptimizationDataB.AgriConnect" action="remove"></resource>
+    <resource name="FSharpOptimizationCompressedDataB.AgriConnect" action="remove"></resource>
+    <resource name="FSharpOptimizationInfo.AgriConnect" action="remove"></resource>
+    <resource name="FSharpSignatureInfo.AgriConnect" action="remove"></resource>
+  </assembly>
+</linker>
